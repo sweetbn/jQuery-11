@@ -1,0 +1,42 @@
+.wrap{
+	width: 500px;
+	height: 500px;
+	margin: 100px auto;
+}
+.wrap>ul{
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	height: 41px;
+
+}
+.wrap>ul>li{
+	display: inline-block;
+	border-radius: 5px;
+	text-decoration: none;
+	padding:10px;
+	background-color: pink;
+	position: relative;
+	width: 80px;
+}
+
+.wrap>ul>li a{
+	text-decoration: none;
+	color: #000;
+}
+.wrap>ul>li ul{
+	list-style: none;
+	display: none;
+	position: absolute;/*需要设置绝对定位*/
+	top: 40px;
+	width: 80px;
+	left: 0px;
+	padding: 10px;
+	background-color: pink;
+	border-radius: 5px;
+}
+.wrap>ul>li ul li{
+	text-decoration: none;
+}
+
+

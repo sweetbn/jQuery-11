@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>手风琴效果</title>
+</head>
+
+<style type="text/css">
+	html,body{
+		padding: 0;
+		margin: 0;
+	}
+	.wrap{
+		width: 200px;
+		min-height: 200px;
+		background-color: pink;
+	}
+	.wrap ul{
+		list-style: none;
+		padding-left: 0;
+		text-align: center;
+	}
+	.wrap ul li{
+		/*background-color: #aaa;*/
+		border-radius: 5px;
+	}
+	.wrap ul li a{
+		text-decoration: none;
+		color: #000;
+		background-color: #aaa;
+		display: block;
+		width: 200px;
+		border-radius: 5px;
+	}
+	.wrap ul li div{
+		width: 200px;
+		height: 200px;
+		/*display: none;*/
+	}
+
+
+</style>
+
+
+<body>
+<div class="wrap">
+	<ul>
+		<li>
+			<a href="#">菜单一</a>
+			<div>我是弹出来的div1</div>
+		</li>
+		<li>
+			<a href="#">菜单二</a>
+			<div>我是弹出来的div2</div>
+		</li>
+		<li>
+			<a href="#">菜单三</a>
+			<div>我是弹出来的div3</div>
+		</li>
+		<li>
+			<a href="#">菜单四</a>
+			<div>我是弹出来的div4</div>
+		</li>
+	</ul>
+</div>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.12.4/jquery.js"></script>
+<!-- mouseenter是只有绑定元素触发，mouseover是绑定元素及其子元素都触发 -->
+<script type="text/javascript">
+	$(document).ready(function(){
+		var $a=$('.wrap ul li a');
+		$a.mouseenter(function(){
+			$(this).next().show().parent().siblings().find('div').hide(200);
+		});
+		$a.mouseleave(function(){
+			$(this).next().hide();
+		});
+		
+	});
+</script>
+</body>
+</html>
