@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>卡通戏曲人物精品案例</title>
+	<style type="text/css">
+		.wrap{
+			width: 400px;
+			height: 300px;
+			margin: 100px auto;
+			background-color: pink;
+			box-sizing: border-box;
+			overflow: hidden;
+		}
+		#left{
+			float: left;
+			width: 100px;
+
+		}
+		#right{
+			float: right;
+			width: 100px;
+		}
+		#left ul,#right ul{
+			list-style: none;
+			background-color: #aaa;
+			padding: 0;
+			margin: 0;
+			width: 100px;
+			height: 300px;
+			text-align: center;
+			border: 1px solid #bbb;
+		}
+		#left ul li,#right ul li{
+			box-sizing: border-box;
+			border-bottom: 1px solid #bbb;
+			height: 50px;
+			line-height: 50px;
+
+		}
+		
+		#left ul li a,#right ul li a{
+			text-decoration: none;
+			color: #000;
+			display: block;
+			line-height: 50px;
+		}
+
+		#content{
+			list-style:none;
+			float: left;
+			width: 200px;
+			padding: 0;
+			font-size: 0;/*padding-top仍然不为0，所以设置字号*/
+			
+			/*display: none;*/
+		}
+		#content li{
+			display: none;
+		}
+		#content img{
+			width: 102%;
+		}
+	</style>
+</head>
+<body>
+<div class="wrap">
+	<div id="left">
+		<ul>
+			<li><a href="#">商品1</a></li>
+			<li><a href="#">商品2</a></li>
+			<li><a href="#">商品3</a></li>
+			<li><a href="#">商品4</a></li>
+		</ul>
+	</div>
+		<ul id="content">
+			<li style="display: block;"><img src="img/1.jpg"></li>
+			<li><img src="img/2.jpg"></li>
+			<li><img src="img/3.jpg"></li>
+			<li><img src="img/4.jpg"></li>
+			<li><img src="img/5.jpg"></li>
+			<li><img src="img/6.jpg"></li>
+			<li><img src="img/7.webp"></li>
+			<li><img src="img/8.jpg"></li>
+		</ul>
+	<div id="right">
+		<ul>
+			<li><a href="#">商品5</a></li>
+			<li><a href="#">商品6</a></li>
+			<li><a href="#">商品7</a></li>
+			<li><a href="#">商品8</a></li>
+		</ul>
+	</div>
+
+</div>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.12.4/jquery.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('#left li').mouseenter(function(){//是li 当为a的时候index取到总为0
+			var $index=$(this).index();
+			$('#content li:eq('+$index+')').show().siblings().hide();
+		});
+
+
+		$('#right li').mouseenter(function(){
+			var $index=$(this).index()+4;
+			$('#content li').eq($index).show().siblings().hide();
+		});
+
+
+
+	});
+</script>
+
+</body>
+</html>
